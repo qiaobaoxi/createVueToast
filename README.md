@@ -158,23 +158,148 @@ Toast.install = function(Vue,option){
   
       const ToastController = Vue.extend(ToastCompont)//extend 相等于继承ToastCompont里面的内容得到全新的实例
       
-      var instace = new ToastController().$mount(document.createElement('div'))//把他看作new Vue()
+      var instance = new ToastController().$mount(document.createElement('div'))//把他看作new Vue()
       
-      instace.message = message;
+      instance.message = message;
       
       instance.visible = true;
+      
+      document.body.appendChild(instance.$el);
       
       setTimeout(()=>{
       
           instance.visible = false;
           
-          document.body.removeChild(instace.$el);//instace.$el就是挂载里面的左右的内容  })
+          document.body.removeChild(instance.$el);//instance.$el就是挂载里面的左右的内容  })
           
   }
   
 }
 
 export default Toast
+
+下面我们来用webpack编译这些内容
+
+我们在最上层文件夹下创建webpack.config.js//webpack 默认配置文件名字是webpack.config.js
+
+和创建.babelrc用来编译es6语法
+
+var path= require('path')
+
+module.exports={
+
+    entry: './src/lib/index.js',//入口文件
+    
+    output:{
+    
+        path:path.join(__dirname,'./dist'),//输出位置
+        
+        filename: 'vue-toast-demo.js',//输出名字
+        
+        libraryTarget:'umd',//输出格式为amd，cmd，common不要只写amd或cmd或common
+        
+        library:'VueToastDemo'//库名字
+        
+     },
+    module:{
+    
+      rules:[
+      
+          {
+          
+              test:/\.vue$/,//匹配文件
+              
+              loader: 'vue-loader',//用loader编译vue
+              
+              exclude:'/node_modules/',//排除文件夹，防止编译这里面的文件
+              
+              options:{
+              
+                  loaders:{
+                  
+                     //因为vue里面有scss语法格式所以有sass-loader编译成css再用css-loader编译成js再把它输入到style 从右到左编译
+                     
+                      scss: 'style-loader!css-loader!sass-loader'
+                      
+                  }
+                  
+              }
+              
+          },
+          
+          {
+          
+              test:/\.js$/,
+              
+              loader: 'babel-loader',
+              
+              exclude:'/node_modules/'
+              
+          }
+          
+      ]
+      
+    },
+    
+    plugins:[]
+    
+}
+
+最后在一开始index.html内容去掉
+
+输入
+
+<!DOCTYPE html>
+
+<html lang="en">
+    
+<head>
+    
+    <meta charset="UTF-8">
+    
+    <title>Document</title>
+    
+    <script  src="../node_modules/vue/dist/vue.js"></script>
+    
+    <script  src="./../dist/vue-toast-demo.js"></script>
+    
+</head>
+
+<body>
+    
+    <div id="app">
+    
+        <a href="javascript:;" @click="toast">点击</a>
+        
+    </div>   
+    
+</body>
+
+<script>
+    
+   new Vue({
+   
+       el:'#app',
+       
+       methods:{
+       
+           toast(){
+           
+               this.$toast.show('你好')
+               
+           }
+           
+       }
+       
+   })
+   
+</script>
+
+</html>
+
+
+
+
 
 
 
