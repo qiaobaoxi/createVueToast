@@ -1,15 +1,26 @@
->创建一个vue插件toast
->我们创建一个文件夹（任意名字）
->在文件夹里面首先 npm init生成一个和创建一个src文件夹
->src里面创建一个index.html
->index.html body里面输入
-><section class="toast-container">
->       <div  class="toast">
->          <span>{{message}}</span>
->       </div>
-></section>
->style里面输入
-><style>
+创建一个vue插件toast
+
+我们创建一个文件夹（任意名字）
+
+在文件夹里面首先 npm init生成一个和创建一个src文件夹
+
+src里面创建一个index.html
+
+index.html body里面输入
+
+<section class="toast-container">
+    
+       <div  class="toast">
+       
+          <span>{{message}}</span>
+          
+       </div>
+       
+</section>
+
+style里面输入
+
+<style>
     .toast-container{
             position: absolute;
             left: 0;
@@ -31,10 +42,15 @@
             color:white;
           }    
 </style>
+
 看下内容显示整不正确，内容在中间
+
 让后创建lib文件夹
+
 里面创建vue-toast.vue文件
+
 文件内容输入
+
 <template>
     <section class="toast-container">
        <div  class="toast">
@@ -74,8 +90,11 @@
       }
   }    
 </script>
+
 我们还要创建index.js作为入口
+
 里面内容输入
+
 import ToastCompont from './vue-toast.vue'
 let Toast = {}
 Toast.install = function(Vue,option){
