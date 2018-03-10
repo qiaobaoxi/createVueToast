@@ -184,9 +184,9 @@ export default Toast
 
 和创建.babelrc用来编译es6语法
 
-var path= require('path')
+ var path= require('path')
 
-module.exports={
+ module.exports={
 
     entry: './src/lib/index.js',//入口文件
     
@@ -249,11 +249,11 @@ module.exports={
 
 输入
 
-<!DOCTYPE html>
+ <!DOCTYPE html>
 
-<html lang="en">
+ <html lang="en">
     
-<head>
+ <head>
     
     <meta charset="UTF-8">
     
@@ -293,9 +293,9 @@ module.exports={
        
    })
    
-</script>
+ </script>
 
-</html>
+ </html>
 
 
 
