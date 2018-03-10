@@ -129,25 +129,25 @@ style里面输入
   }    
 </script>
 
-我们还要创建index.js作为入口
+ 我们还要创建index.js作为入口
 
-里面内容输入
+ 里面内容输入
 
- import ToastCompont from './vue-toast.vue'
+  import ToastCompont from './vue-toast.vue'
 
- let Toast = {}
+  let Toast = {}
 
- Toast.install = function(Vue,option){
+  Toast.install = function(Vue,option){
 
   //参数Vue是通过vue.use传来了的 
   
-  var opt = {
+   var opt = {
   
-      duration:3000
+       duration:3000
       
-  }
+   }
   
-  //用户配置
+   //用户配置
   
   for(var key in options){
   
@@ -176,13 +176,13 @@ style里面输入
   
 }
 
-export default Toast
+ export default Toast
 
-下面我们来用webpack编译这些内容
+ 下面我们来用webpack编译这些内容
 
-我们在最上层文件夹下创建webpack.config.js//webpack 默认配置文件名字是webpack.config.js
+ 我们在最上层文件夹下创建webpack.config.js//webpack 默认配置文件名字是webpack.config.js
 
-和创建.babelrc用来编译es6语法
+ 和创建.babelrc用来编译es6语法
 
   var path= require('path')
 
@@ -201,7 +201,7 @@ export default Toast
         library:'VueToastDemo'//库名字
         
      },
-    module:{
+     module:{
     
       rules:[
       
