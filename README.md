@@ -20,47 +20,47 @@ index.html body里面输入
 
 style里面输入
 
-<style>
+><style>
     
-    .toast-container{
+>    .toast-container{
     
-            position: absolute;
+>            position: absolute;
             
-            left: 0;
+>            left: 0;
+            
+>            top: 0;
             
-            top: 0;
+>            bottom: 0;
             
-            bottom: 0;
+>            right: 0;
             
-            right: 0;
+>            z-index: 1000;
             
-            z-index: 1000;
+>            display: flex;
             
-            display: flex;
+>            justify-content: center;
             
-            justify-content: center;
+>            align-items: center;
             
-            align-items: center;
-            
-    } 
+>    } 
     
-    .toast{
+>    .toast{
     
-            width: 180px;
+>            width: 180px;
             
-            height: 60px;
+>           height: 60px;
             
-            line-height: 60px;
+>            line-height: 60px;
             
-            text-align: center;
+>            text-align: center;
             
-            background-color:rgba(0, 0, 0,0.61);
+>            background-color:rgba(0, 0, 0,0.61);
             
-            border-radius: 10px;
+>            border-radius: 10px;
             
-            color:white;
+>            color:white;
             
-          }    
+>          }    
           
 </style>
 
