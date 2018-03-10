@@ -133,11 +133,11 @@ style里面输入
 
 里面内容输入
 
-import ToastCompont from './vue-toast.vue'
+ import ToastCompont from './vue-toast.vue'
 
-let Toast = {}
+ let Toast = {}
 
-Toast.install = function(Vue,option){
+ Toast.install = function(Vue,option){
 
   //参数Vue是通过vue.use传来了的 
   
@@ -184,9 +184,9 @@ export default Toast
 
 和创建.babelrc用来编译es6语法
 
- var path= require('path')
+  var path= require('path')
 
- module.exports={
+  module.exports={
 
     entry: './src/lib/index.js',//入口文件
     
@@ -293,9 +293,9 @@ export default Toast
        
    })
    
- </script>
+  </script>
 
- </html>
+  </html>
 
 
 
