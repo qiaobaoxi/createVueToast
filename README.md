@@ -23,43 +23,25 @@ style里面输入
 ><style>
     
 >    .toast-container{
-    
 >            position: absolute;
-            
 >            left: 0;
-            
 >            top: 0;
-            
 >            bottom: 0;
-            
 >            right: 0;
-            
 >            z-index: 1000;
-            
 >            display: flex;
-            
 >            justify-content: center;
-            
 >            align-items: center;
-            
 >    } 
     
 >    .toast{
-    
 >            width: 180px;
-            
->           height: 60px;
-            
+>            height: 60px;
 >            line-height: 60px;
-            
 >            text-align: center;
-            
 >            background-color:rgba(0, 0, 0,0.61);
-            
 >            border-radius: 10px;
-            
 >            color:white;
-            
 >          }    
           
 </style>
