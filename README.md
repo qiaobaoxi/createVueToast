@@ -1,15 +1,15 @@
 >创建一个vue插件toast
-我们创建一个文件夹（任意名字）
-在文件夹里面首先 npm init生成一个和创建一个src文件夹
-src里面创建一个index.html
-index.html body里面输入
-<section class="toast-container">
-       <div  class="toast">
-          <span>{{message}}</span>
-       </div>
-</section>
-style里面输入
-<style>
+>我们创建一个文件夹（任意名字）
+>在文件夹里面首先 npm init生成一个和创建一个src文件夹
+>src里面创建一个index.html
+>index.html body里面输入
+><section class="toast-container">
+>       <div  class="toast">
+>          <span>{{message}}</span>
+>       </div>
+></section>
+>style里面输入
+><style>
     .toast-container{
             position: absolute;
             left: 0;
